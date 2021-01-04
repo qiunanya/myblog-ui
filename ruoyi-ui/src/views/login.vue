@@ -74,7 +74,22 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
+      <span style="font-family: arial"
+        >ICP备案号：<a href="http://beian.miit.gov.cn/"
+          >黔ICP备2020011800号-1</a
+        >
+        || Copyright &copy;2021</span
+      >
       <span>Copyright © 2018-2021 lucky candy All Rights Reserved.</span>
+      <a
+        target="_blank"
+        href="http://wpa.qq.com/msgrd?v=3&uin=1766226354&site=qq&menu=yes"
+        ><img
+          border="0"
+          src="http://wpa.qq.com/pa?p=2:1766226354:51"
+          alt="点击这里给我发消息"
+          title="点击这里给我发消息"
+      /></a>
     </div>
   </div>
 </template>
@@ -93,7 +108,7 @@ export default {
       cookiePassword: "",
       loginForm: {
         username: "admin",
-        password: "admin123",
+        password: "",
         rememberMe: false,
         code: "",
         uuid: "",
