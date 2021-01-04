@@ -75,10 +75,9 @@
     <!--  底部  -->
     <div class="el-login-footer">
       <span style="font-family: arial"
-        >ICP备案号：<a href="http://beian.miit.gov.cn/"
-          >黔ICP备2020011800号-1</a
-        >
-        || Copyright &copy;2021</span
+        >ICP备案号：
+        <a href="http://beian.miit.gov.cn/">黔ICP备2020011800号-1</a>
+        || &nbsp;</span
       >
       <span>Copyright © 2018-2021 lucky candy All Rights Reserved.</span>
       <a
