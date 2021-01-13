@@ -1,5 +1,5 @@
 module.exports = {
-  title: '幸运的糖果博客系统',
+  title: '若依管理系统',
 
   /**
    * 侧边栏主题 深色主题theme-dark，浅色主题theme-light

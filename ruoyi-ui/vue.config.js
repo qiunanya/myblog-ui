@@ -33,9 +33,9 @@ module.exports = {
     open: true,
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
-      [process.env.VUE_APP_BASE_API]: {
-        target: `http://www.qiuaiyun.top:8080`,// 生产环境请求api
-        //target: `localhost:8080`,
+        [process.env.VUE_APP_BASE_API]: {
+        target: `http://www.qiuaiyun.top:8080`,
+        //target: `http://localhost:8080`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
