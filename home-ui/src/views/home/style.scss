@@ -1,0 +1,35 @@
+.wrapper {
+    .home_wap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #34626c;
+        color: #ffffff;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        h2 {
+            padding: 0;
+            line-height: 0;
+        }
+        .author{
+            font-size: 14px;
+            font-weight:bolder;
+            padding: 0 15px;
+        }
+    }
+    /*内容模块*/
+    .content{
+        display: flex;
+        // flex-wrap: wrap;
+        .item_right{
+            width: 87vw;
+            height: 87vh;
+            overflow: hidden;
+            overflow-y: scroll;
+            padding: 15px;
+        }
+    }
+}
