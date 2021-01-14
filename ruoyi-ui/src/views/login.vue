@@ -1,24 +1,10 @@
 <template>
   <div class="login">
-    <el-form
-      ref="loginForm"
-      :model="loginForm"
-      :rules="loginRules"
-      class="login-form"
-    >
-      <h3 class="title">{{ loginTitle }}</h3>
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
+      <h3 class="title">幸运糖果博客后台管理系统</h3>
       <el-form-item prop="username">
-        <el-input
-          v-model="loginForm.username"
-          type="text"
-          auto-complete="off"
-          placeholder="账号"
-        >
-          <svg-icon
-            slot="prefix"
-            icon-class="user"
-            class="el-input__icon input-icon"
-          />
+        <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
+          <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
@@ -29,11 +15,7 @@
           placeholder="密码"
           @keyup.enter.native="handleLogin"
         >
-          <svg-icon
-            slot="prefix"
-            icon-class="password"
-            class="el-input__icon input-icon"
-          />
+          <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon" />
         </el-input>
       </el-form-item>
       <el-form-item prop="code">
@@ -44,27 +26,19 @@
           style="width: 63%"
           @keyup.enter.native="handleLogin"
         >
-          <svg-icon
-            slot="prefix"
-            icon-class="validCode"
-            class="el-input__icon input-icon"
-          />
+          <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />
         </el-input>
         <div class="login-code">
-          <img :src="codeUrl" @click="getCode" class="login-code-img" />
+          <img :src="codeUrl" @click="getCode" class="login-code-img"/>
         </div>
       </el-form-item>
-      <el-checkbox
-        v-model="loginForm.rememberMe"
-        style="margin: 0px 0px 25px 0px"
-        >记住密码</el-checkbox
-      >
-      <el-form-item style="width: 100%">
+      <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
+      <el-form-item style="width:100%;">
         <el-button
           :loading="loading"
           size="medium"
           type="primary"
-          style="width: 100%"
+          style="width:100%;"
           @click.native.prevent="handleLogin"
         >
           <span v-if="!loading">登 录</span>
@@ -79,7 +53,7 @@
         <a href="http://beian.miit.gov.cn/">黔ICP备2020011800号-1</a>
         || &nbsp;</span
       >
-      <span>Copyright © 2018-2021 lucky candy All Rights Reserved.</span>
+      <span>Copyright © 2020-2021 lucky candy All Rights Reserved.</span>
       <a
         target="_blank"
         href="http://wpa.qq.com/msgrd?v=3&uin=1766226354&site=qq&menu=yes"
@@ -96,44 +70,41 @@
 <script>
 import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
-import { encrypt, decrypt } from "@/utils/jsencrypt";
+import { encrypt, decrypt } from '@/utils/jsencrypt'
 
 export default {
   name: "Login",
   data() {
     return {
       codeUrl: "",
-      loginTitle: "幸运的糖果博客后台管理系统",
       cookiePassword: "",
       loginForm: {
         username: "admin",
         password: "",
         rememberMe: false,
         code: "",
-        uuid: "",
+        uuid: ""
       },
       loginRules: {
         username: [
-          { required: true, trigger: "blur", message: "用户名不能为空" },
+          { required: true, trigger: "blur", message: "用户名不能为空" }
         ],
         password: [
-          { required: true, trigger: "blur", message: "密码不能为空" },
+          { required: true, trigger: "blur", message: "密码不能为空" }
         ],
-        code: [
-          { required: true, trigger: "change", message: "验证码不能为空" },
-        ],
+        code: [{ required: true, trigger: "change", message: "验证码不能为空" }]
       },
       loading: false,
-      redirect: undefined,
+      redirect: undefined
     };
   },
   watch: {
     $route: {
-      handler: function (route) {
+      handler: function(route) {
         this.redirect = route.query && route.query.redirect;
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   created() {
     this.getCode();
@@ -141,7 +112,7 @@ export default {
   },
   methods: {
     getCode() {
-      getCodeImg().then((res) => {
+      getCodeImg().then(res => {
         this.codeUrl = "data:image/gif;base64," + res.img;
         this.loginForm.uuid = res.uuid;
       });
@@ -149,44 +120,36 @@ export default {
     getCookie() {
       const username = Cookies.get("username");
       const password = Cookies.get("password");
-      const rememberMe = Cookies.get("rememberMe");
+      const rememberMe = Cookies.get('rememberMe')
       this.loginForm = {
         username: username === undefined ? this.loginForm.username : username,
-        password:
-          password === undefined ? this.loginForm.password : decrypt(password),
-        rememberMe: rememberMe === undefined ? false : Boolean(rememberMe),
+        password: password === undefined ? this.loginForm.password : decrypt(password),
+        rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
       };
     },
     handleLogin() {
-      this.$refs.loginForm.validate((valid) => {
+      this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true;
           if (this.loginForm.rememberMe) {
             Cookies.set("username", this.loginForm.username, { expires: 30 });
-            Cookies.set("password", encrypt(this.loginForm.password), {
-              expires: 30,
-            });
-            Cookies.set("rememberMe", this.loginForm.rememberMe, {
-              expires: 30,
-            });
+            Cookies.set("password", encrypt(this.loginForm.password), { expires: 30 });
+            Cookies.set('rememberMe', this.loginForm.rememberMe, { expires: 30 });
           } else {
             Cookies.remove("username");
             Cookies.remove("password");
-            Cookies.remove("rememberMe");
+            Cookies.remove('rememberMe');
           }
-          this.$store
-            .dispatch("Login", this.loginForm)
-            .then(() => {
-              this.$router.push({ path: this.redirect || "/" }).catch(() => {});
-            })
-            .catch(() => {
-              this.loading = false;
-              this.getCode();
-            });
+          this.$store.dispatch("Login", this.loginForm).then(() => {
+            this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
+          }).catch(() => {
+            this.loading = false;
+            this.getCode();
+          });
         }
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -210,6 +173,7 @@ export default {
   background: #ffffff;
   width: 400px;
   padding: 25px 25px 5px 25px;
+  box-shadow:8px 7px 20px 14px rgb(219 212 212 / 30%);
   .el-input {
     height: 38px;
     input {
