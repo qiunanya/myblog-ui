@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="home_wap">
-      <img src="@/assets/logo.png" alt srcset />
+      <img src="~@/assets/logo.png" alt srcset />
       <h2>WEB 前端 CSS3.0 JS HTML5 技术</h2>
       <p class="author">制作人：前端实习生 (人无信不立)</p>
       <p class="author">当前日期：{{ dateFamtter }}</p>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { add } from '@script/index';
+import { add } from '~@script/index';
 export default {
   name: 'Home',
   data () {
@@ -56,20 +56,12 @@ export default {
     getCurrentDate () {
       const date = new Date();
       // 获取年
-      console.log(date.getFullYear(), '年');
-      // 获取月
-      console.log(date.getMonth(), '月');
-      // 获取日
-      console.log(date.getDate(), '日');
-      // 获取时分秒
-      console.log(
-        date.getHours(),
-        date.getMinutes(),
-        date.getSeconds(),
-        '时间'
-      );
+      //   console.log(date.getFullYear(), '年');
+      //   // 获取月
+      //   console.log(date.getMonth(), '月');
+      //   // 获取日
+      //   console.log(date.getDate(), '日');
       // 获取当天时间
-      console.log(date.getDay(), '当天时间');
       let xq = '';
       switch (date.getDay()) {
         case 1:
@@ -146,16 +138,8 @@ export default {
   beforeMount () {
     console.log('beforeMount');
     this.sums(1, 2, 88, 55, 12);
-  },
-  beforeUpdate () {
-    console.log('beforeUpdate');
-  },
-  beforeDestroy () {
-    console.log('beforeDestroy');
-  },
-  destroyed () {
-    console.log('destroyed');
   }
+
 };
 </script>
 <style lang="scss" src="./style.scss">

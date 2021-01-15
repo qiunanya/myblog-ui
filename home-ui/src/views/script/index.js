@@ -4,6 +4,6 @@
  * @param {*} y 参数
  * @returns 返回值
  */
-export function add( x = 0, y = 0) {
-    return x + y;
+export function add (x = 0, y = 0) {
+  return x + y;
 }

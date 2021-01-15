@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
-import Approval from '@components/approval';
-import Asset from '@components/asset';
+import Approval from '~@components/approval';
+import Asset from '~@components/asset';
 export default {
   name: 'w3c',
   components: {

@@ -1,6 +1,8 @@
 {
-  "name": "home-ui",
+  "name": "home-ui3.0",
   "version": "0.1.0",
+  "description": "糖果博客客户端网站",
+  "author": "前端实习生",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,10 +11,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "view-design": "^4.4.0",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vue-wechat-title": "^2.0.7",
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -20,6 +22,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
@@ -27,9 +30,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2"
   }
 }

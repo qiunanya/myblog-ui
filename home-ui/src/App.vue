@@ -5,11 +5,14 @@
   </div>
 </template>
 <script>
-import Foot from '@components/layout/foot';
+import Foot from '~@components/layout/foot';
 export default {
   name: 'app',
   components: {
     Foot
+  },
+  mounted () {
+    console.log(process.env, process.env.port, '环境监测');
   }
 }
 </script>
