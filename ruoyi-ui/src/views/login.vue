@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">幸运糖果博客后台管理系统</h3>
+      <h3 class="title">若依后台管理系统</h3>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
           <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
@@ -48,21 +48,7 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span style="font-family: arial"
-        >ICP备案号：
-        <a href="http://beian.miit.gov.cn/">黔ICP备2020011800号-1</a>
-        || &nbsp;</span
-      >
-      <span>Copyright © 2020-2021 lucky candy All Rights Reserved.</span>
-      <a
-        target="_blank"
-        href="http://wpa.qq.com/msgrd?v=3&uin=1766226354&site=qq&menu=yes"
-        ><img
-          border="0"
-          src="http://wpa.qq.com/pa?p=2:1766226354:51"
-          alt="点击这里给我发消息"
-          title="点击这里给我发消息"
-      /></a>
+      <span>黔ICP备2020011800号-1 || Copyright © 2020-2021 ruoyi.vip All Rights Reserved.</span>
     </div>
   </div>
 </template>
@@ -80,7 +66,7 @@ export default {
       cookiePassword: "",
       loginForm: {
         username: "admin",
-        password: "",
+        password: "admin123",
         rememberMe: false,
         code: "",
         uuid: ""
@@ -173,7 +159,6 @@ export default {
   background: #ffffff;
   width: 400px;
   padding: 25px 25px 5px 25px;
-  box-shadow:8px 7px 20px 14px rgb(219 212 212 / 30%);
   .el-input {
     height: 38px;
     input {
