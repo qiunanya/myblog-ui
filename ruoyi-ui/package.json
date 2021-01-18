@@ -1,8 +1,8 @@
 {
-  "name": "ruoyi",
+  "name": "NanyaQiu",
   "version": "3.3.0",
-  "description": "若依管理系统",
-  "author": "若依",
+  "description": "糖果博客管理系统",
+  "author": "前端实习生",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve",
