@@ -112,38 +112,48 @@
     </el-row>
 
     <el-table v-loading="loading" :data="articleList" @selection-change="handleSelectionChange">
-      <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="博文ID" align="center" prop="articleId" />
-      <el-table-column label="博文标题" align="center" prop="articleTitle" />
-      <el-table-column label="博文内容" align="center" prop="articleContent" />
-      <el-table-column label="点赞数" align="center" prop="articleStar" />
-      <el-table-column label="游览量" align="center" prop="articleViews" />
-      <el-table-column label="状态" align="center" prop="articleStatus" />
-      <el-table-column label="发布日期" align="center" prop="articleReleaseTime" width="180">
-        <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.articleReleaseTime, '{y}-{m}-{d}') }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="发表用户" align="center" prop="articleUser" />
-      <el-table-column label="回复数" align="center" prop="articleReplyCount" />
-      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
-        <template slot-scope="scope">
-          <el-button
-            size="mini"
-            type="text"
-            icon="el-icon-edit"
-            @click="handleUpdate(scope.row)"
-            v-hasPermi="['blog:article:edit']"
-          >修改</el-button>
-          <el-button
-            size="mini"
-            type="text"
-            icon="el-icon-delete"
-            @click="handleDelete(scope.row)"
-            v-hasPermi="['blog:article:remove']"
-          >删除</el-button>
-        </template>
-      </el-table-column>
+        <el-table-column type="selection" width="55" align="center" />
+        <el-table-column label="博文ID" align="center" prop="articleId" />
+        <el-table-column label="博文标题" align="center" prop="articleTitle" />
+        <!-- <el-table-column label="博文内容" align="center" prop="articleContent" show-overflow-tooltip> 
+            <template slot-scope="scope">
+                <div class="article_content" v-html="scope.row.articleContent"></div>
+            </template>
+        </el-table-column> -->
+        <el-table-column label="点赞数" align="center" prop="articleStar" />
+        <el-table-column label="游览量" align="center" prop="articleViews" />
+        <el-table-column label="状态" align="center" prop="articleStatus" />
+        <el-table-column label="发布日期" align="center" prop="articleReleaseTime" width="180">
+            <template slot-scope="scope">
+            <span>{{ parseTime(scope.row.articleReleaseTime, '{y}-{m}-{d}') }}</span>
+            </template>
+        </el-table-column>
+        <el-table-column label="发表用户" align="center" prop="articleUser" />
+        <el-table-column label="回复数" align="center" prop="articleReplyCount" />
+        <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
+            <template slot-scope="scope">
+            <el-button
+                size="mini"
+                type="text"
+                icon="el-icon-edit"
+                @click="handleUpdate(scope.row)"
+                v-hasPermi="['blog:article:edit']"
+            >修改</el-button>
+            <el-button
+                size="mini"
+                type="text"
+                icon="el-icon-delete"
+                @click="handleDelete(scope.row)"
+                v-hasPermi="['blog:article:remove']"
+            >删除</el-button>
+            <el-button
+                size="mini"
+                type="text"
+                icon="el-icon-view"
+                @click="handleView(scope.row)"
+            >查看详情</el-button>
+            </template>
+        </el-table-column>
     </el-table>
     
     <pagination
@@ -155,7 +165,7 @@
     />
 
     <!-- 添加或修改文章对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
+    <el-dialog :title="title" :visible.sync="open" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="博文标题" prop="articleTitle">
           <el-input v-model="form.articleTitle" placeholder="请输入博文标题" />
@@ -194,6 +204,14 @@
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
+    <!-- 详情页面 -->
+    <el-drawer
+        title="我是标题"
+        :visible.sync="drawer"
+        :direction="direction"
+        :before-close="handleClose">
+        <span>我来啦!</span>
+    </el-drawer>
   </div>
 </template>
 
@@ -250,6 +268,12 @@ export default {
     this.getList();
   },
   methods: {
+    /**
+     * 查看文章详情
+     */
+    handleView(row){
+        console.log(row);
+    },
     /** 查询文章列表 */
     getList() {
       this.loading = true;
@@ -361,3 +385,6 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+@import url('./style.scss');
+</style>
