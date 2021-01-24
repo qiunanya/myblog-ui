@@ -113,7 +113,7 @@ public class SysLoginService
                 throw new CustomException(e.getMessage());
             }
         }
-        AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.appLogin.success")));
+        AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.app.login.success")));
         LoginUser loginUser = (LoginUser)authentication.getPrincipal();
         return tokenService.createToken(loginUser);
     }
