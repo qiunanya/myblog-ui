@@ -46,8 +46,9 @@
         </el-button>
       </el-form-item>
     </el-form>
+    
     <!--  底部  -->
-    <div class="el-login-footer">
+    <div class="el-login-footer">   
       <span>黔ICP备2020011800号-1 || Copyright © 2020-2021 前端实习生 All Rights Reserved.</span>
     </div>
   </div>
