@@ -57,6 +57,22 @@ public class SysLoginController
     }
 
     /**
+     * APP 登录接口
+     *
+     * @param loginBody App 登录信息
+     * @Author Qiunanya
+     * @Description //TODO
+     * @Date 2021/1/24 11:09
+     **/
+    @PostMapping(value = "/app/login")
+    public AjaxResult appLogin(@RequestBody LoginBody loginBody){
+        AjaxResult ajax = AjaxResult.success();
+        String appToken = loginService.appLogin(loginBody.getUsername(), loginBody.getPassword());
+        ajax.put(Constants.TOKEN, appToken);
+        return ajax;
+    }
+
+    /**
      * 获取用户信息
      * 
      * @return 用户信息
