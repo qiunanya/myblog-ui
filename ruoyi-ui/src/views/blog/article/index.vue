@@ -1,6 +1,12 @@
 <template>
   <div class="app-container">
-    <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
+    <el-form
+      :model="queryParams"
+      ref="queryForm"
+      :inline="true"
+      v-show="showSearch"
+      label-width="68px"
+    >
       <el-form-item label="博文标题" prop="articleTitle">
         <el-input
           v-model="queryParams.articleTitle"
@@ -29,16 +35,29 @@
         />
       </el-form-item>
       <el-form-item label="状态" prop="articleStatus">
-        <el-select v-model="queryParams.articleStatus" placeholder="请选择状态" clearable size="small">
-          <el-option label="请选择字典生成" value="" />
+        <el-select
+          v-model="queryParams.articleStatus"
+          placeholder="请选择状态"
+          clearable
+          size="small"
+        >
+          <el-option
+            v-for="dict in statusOptions"
+            :key="dict.dictValue"
+            :label="dict.dictLabel"
+            :value="dict.dictValue"
+            />
         </el-select>
       </el-form-item>
       <el-form-item label="发布日期" prop="articleReleaseTime">
-        <el-date-picker clearable size="small"
+        <el-date-picker
+          clearable
+          size="small"
           v-model="queryParams.articleReleaseTime"
           type="date"
           value-format="yyyy-MM-dd"
-          placeholder="选择发布日期">
+          placeholder="选择发布日期"
+        >
         </el-date-picker>
       </el-form-item>
       <el-form-item label="发表用户" prop="articleUser">
@@ -60,8 +79,16 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">重置</el-button>
+        <el-button
+          type="primary"
+          icon="el-icon-search"
+          size="mini"
+          @click="handleQuery"
+          >搜索</el-button
+        >
+        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery"
+          >重置</el-button
+        >
       </el-form-item>
     </el-form>
 
@@ -74,7 +101,8 @@
           size="mini"
           @click="handleAdd"
           v-hasPermi="['blog:article:add']"
-        >新增</el-button>
+          >新增</el-button
+        >
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -85,7 +113,8 @@
           :disabled="single"
           @click="handleUpdate"
           v-hasPermi="['blog:article:edit']"
-        >修改</el-button>
+          >修改</el-button
+        >
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -96,7 +125,8 @@
           :disabled="multiple"
           @click="handleDelete"
           v-hasPermi="['blog:article:remove']"
-        >删除</el-button>
+          >删除</el-button
+        >
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -106,58 +136,79 @@
           size="mini"
           @click="handleExport"
           v-hasPermi="['blog:article:export']"
-        >导出</el-button>
+          >导出</el-button
+        >
       </el-col>
-      <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
+      <right-toolbar
+        :showSearch.sync="showSearch"
+        @queryTable="getList"
+      ></right-toolbar>
     </el-row>
 
-    <el-table v-loading="loading" :data="articleList" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center" />
-        <el-table-column label="博文ID" align="center" prop="articleId" />
-        <el-table-column label="博文标题" align="center" prop="articleTitle" />
-        <!-- <el-table-column label="博文内容" align="center" prop="articleContent" show-overflow-tooltip> 
-            <template slot-scope="scope">
-                <div class="article_content" v-html="scope.row.articleContent"></div>
-            </template>
-        </el-table-column> -->
-        <el-table-column label="点赞数" align="center" prop="articleStar" />
-        <el-table-column label="游览量" align="center" prop="articleViews" />
-        <el-table-column label="状态" align="center" prop="articleStatus" />
-        <el-table-column label="发布日期" align="center" prop="articleReleaseTime" width="180">
-            <template slot-scope="scope">
-            <span>{{ parseTime(scope.row.articleReleaseTime, '{y}-{m}-{d}') }}</span>
-            </template>
-        </el-table-column>
-        <el-table-column label="发表用户" align="center" prop="articleUser" />
-        <el-table-column label="回复数" align="center" prop="articleReplyCount" />
-        <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
-            <template slot-scope="scope">
-            <el-button
-                size="mini"
-                type="text"
-                icon="el-icon-edit"
-                @click="handleUpdate(scope.row)"
-                v-hasPermi="['blog:article:edit']"
-            >修改</el-button>
-            <el-button
-                size="mini"
-                type="text"
-                icon="el-icon-delete"
-                @click="handleDelete(scope.row)"
-                v-hasPermi="['blog:article:remove']"
-            >删除</el-button>
-            <el-button
-                size="mini"
-                type="text"
-                icon="el-icon-view"
-                @click="handleView(scope.row)"
-            >查看详情</el-button>
-            </template>
-        </el-table-column>
+    <el-table
+      v-loading="loading"
+      :data="articleList"
+      @selection-change="handleSelectionChange"
+    >
+      <el-table-column type="selection" width="55" align="center" />
+      <el-table-column
+        label="博文ID"
+        align="center"
+        prop="articleId"
+        v-if="false"
+      />
+      <el-table-column label="博文标题" align="center" prop="articleTitle" />
+      <!-- <el-table-column label="博文内容" align="center" prop="articleContent" /> -->
+      <el-table-column label="点赞数" align="center" prop="articleStar" />
+      <el-table-column label="游览量" align="center" prop="articleViews" />
+      <el-table-column label="状态" align="center" prop="articleStatus" >
+          <template slot-scope="scope">
+              <el-tag v-if="scope.row.articleStatus === '0'" type="success">正常</el-tag>
+              <el-tag v-else type="danger">已停用</el-tag>
+          </template>
+      </el-table-column>
+      <el-table-column
+        label="发布日期"
+        align="center"
+        prop="articleReleaseTime"
+        width="180"
+      >
+        <template slot-scope="scope">
+          <span>{{
+            parseTime(scope.row.articleReleaseTime, "{y}-{m}-{d}")
+          }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="发表用户" align="center" prop="articleUser" />
+      <el-table-column label="回复数" align="center" prop="articleReplyCount" />
+      <el-table-column
+        label="操作"
+        align="center"
+        class-name="small-padding fixed-width"
+      >
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            type="text"
+            icon="el-icon-edit"
+            @click="handleUpdate(scope.row)"
+            v-hasPermi="['blog:article:edit']"
+            >修改</el-button
+          >
+          <el-button
+            size="mini"
+            type="text"
+            icon="el-icon-delete"
+            @click="handleDelete(scope.row)"
+            v-hasPermi="['blog:article:remove']"
+            >删除</el-button
+          >
+        </template>
+      </el-table-column>
     </el-table>
-    
+
     <pagination
-      v-show="total>0"
+      v-show="total > 0"
       :total="total"
       :page.sync="queryParams.pageNum"
       :limit.sync="queryParams.pageSize"
@@ -165,13 +216,13 @@
     />
 
     <!-- 添加或修改文章对话框 -->
-    <el-dialog :title="title" :visible.sync="open" append-to-body>
+    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="博文标题" prop="articleTitle">
           <el-input v-model="form.articleTitle" placeholder="请输入博文标题" />
         </el-form-item>
         <el-form-item label="博文内容">
-          <editor v-model="form.articleContent" :min-height="192"/>
+          <editor v-model="form.articleContent" :min-height="192" />
         </el-form-item>
         <el-form-item label="点赞数" prop="articleStar">
           <el-input v-model="form.articleStar" placeholder="请输入点赞数" />
@@ -181,22 +232,32 @@
         </el-form-item>
         <el-form-item label="状态">
           <el-radio-group v-model="form.articleStatus">
-            <el-radio label="1">请选择字典生成</el-radio>
+                <el-radio
+                    v-for="dict in statusOptions"
+                    :key="dict.dictValue"
+                    :label="dict.dictValue"
+                    >{{dict.dictLabel}}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="发布日期" prop="articleReleaseTime">
-          <el-date-picker clearable size="small"
+          <el-date-picker
+            clearable
+            size="small"
             v-model="form.articleReleaseTime"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择发布日期">
+            type="datetime"
+            value-format="yyyy-MM-dd HH:mm:ss"
+            placeholder="选择发布日期"
+          >
           </el-date-picker>
         </el-form-item>
         <el-form-item label="发表用户" prop="articleUser">
           <el-input v-model="form.articleUser" placeholder="请输入发表用户" />
         </el-form-item>
         <el-form-item label="回复数" prop="articleReplyCount">
-          <el-input v-model="form.articleReplyCount" placeholder="请输入回复数" />
+          <el-input
+            v-model="form.articleReplyCount"
+            placeholder="请输入回复数"
+          />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -204,25 +265,24 @@
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
-    <!-- 详情页面 -->
-    <el-drawer
-        title="我是标题"
-        :visible.sync="drawer"
-        :direction="direction"
-        :before-close="handleClose">
-        <span>我来啦!</span>
-    </el-drawer>
   </div>
 </template>
 
 <script>
-import { listArticle, getArticle, delArticle, addArticle, updateArticle, exportArticle } from "@/api/blog/article";
-import Editor from '@/components/Editor';
+import {
+  listArticle,
+  getArticle,
+  delArticle,
+  addArticle,
+  updateArticle,
+  exportArticle
+} from "@/api/blog/article";
+import Editor from "@/components/Editor";
 
 export default {
   name: "Article",
   components: {
-    Editor,
+    Editor
   },
   data() {
     return {
@@ -248,32 +308,29 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        articleTitle: null,
-        articleContent: null,
-        articleStar: null,
-        articleViews: null,
-        articleStatus: null,
-        articleReleaseTime: null,
-        articleUser: null,
-        articleReplyCount: null
+        articleTitle: undefined,
+        articleContent: undefined,
+        articleStar: undefined,
+        articleViews: undefined,
+        articleStatus: undefined,
+        articleReleaseTime: undefined,
+        articleUser: undefined,
+        articleReplyCount: undefined
       },
       // 表单参数
       form: {},
       // 表单校验
-      rules: {
-      }
+      rules: {},
+      statusOptions: []
     };
   },
   created() {
     this.getList();
+     this.getDicts("common_status").then(response => {
+          this.statusOptions = response.data;
+    });
   },
   methods: {
-    /**
-     * 查看文章详情
-     */
-    handleView(row){
-        console.log(row);
-    },
     /** 查询文章列表 */
     getList() {
       this.loading = true;
@@ -291,15 +348,15 @@ export default {
     // 表单重置
     reset() {
       this.form = {
-        articleId: null,
-        articleTitle: null,
-        articleContent: null,
-        articleStar: null,
-        articleViews: null,
+        articleId: undefined,
+        articleTitle: undefined,
+        articleContent: undefined,
+        articleStar: undefined,
+        articleViews: undefined,
         articleStatus: "0",
-        articleReleaseTime: null,
-        articleUser: null,
-        articleReplyCount: null
+        articleReleaseTime: undefined,
+        articleUser: undefined,
+        articleReplyCount: undefined
       };
       this.resetForm("form");
     },
@@ -315,9 +372,9 @@ export default {
     },
     // 多选框选中数据
     handleSelectionChange(selection) {
-      this.ids = selection.map(item => item.articleId)
-      this.single = selection.length!==1
-      this.multiple = !selection.length
+      this.ids = selection.map(item => item.articleId);
+      this.single = selection.length !== 1;
+      this.multiple = !selection.length;
     },
     /** 新增按钮操作 */
     handleAdd() {
@@ -328,7 +385,7 @@ export default {
     /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset();
-      const articleId = row.articleId || this.ids
+      const articleId = row.articleId || this.ids;
       getArticle(articleId).then(response => {
         this.form = response.data;
         this.open = true;
@@ -358,33 +415,38 @@ export default {
     /** 删除按钮操作 */
     handleDelete(row) {
       const articleIds = row.articleId || this.ids;
-      this.$confirm('是否确认删除文章编号为"' + articleIds + '"的数据项?', "警告", {
+      this.$confirm(
+        '是否确认删除文章编号为"' + articleIds + '"的数据项?',
+        "警告",
+        {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
-        }).then(function() {
+        }
+      )
+        .then(function() {
           return delArticle(articleIds);
-        }).then(() => {
+        })
+        .then(() => {
           this.getList();
           this.msgSuccess("删除成功");
-        })
+        });
     },
     /** 导出按钮操作 */
     handleExport() {
       const queryParams = this.queryParams;
-      this.$confirm('是否确认导出所有文章数据项?', "警告", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
-          type: "warning"
-        }).then(function() {
+      this.$confirm("是否确认导出所有文章数据项?", "警告", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+        .then(function() {
           return exportArticle(queryParams);
-        }).then(response => {
-          this.download(response.msg);
         })
+        .then(response => {
+          this.download(response.msg);
+        });
     }
   }
 };
 </script>
-<style lang="scss">
-@import url('./style.scss');
-</style>

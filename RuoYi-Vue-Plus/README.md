@@ -13,13 +13,18 @@
 * 参考ruoyi-demo模块
 * 需要改动: 父pom 与 admin模块pom
 
+关于树表生成
+* 直接在mysql表中 添加 parentId orderNum 等字段(根据需要参考 TreeEntity类)
+* 代码生成选择树表生成即可
+
 ## 修改RuoYi功能
 
-* ORM框架 使用 Mybatis-Plus 简化CRUD (目前支持单表生成 不支持树表与主子表)
+* ORM框架 使用 Mybatis-Plus 简化CRUD (目前支持单表生成与树表 不支持主子表)
 * Bean简化 使用 Lombok 简化 get set toString 等等
 * 容器改动 Tomcat 改为 并发性能更好的 undertow
 * 代码生成模板 改为适配 Mybatis-Plus 的代码
 * 项目修改为 maven多环境配置
+* 集成 Feign 接口化管理 Http 请求(如三方请求 支付,短信,推送等)
 * 升级MybatisPlus 3.4.2
 * 增加demo模块示例(给不会增加模块的小伙伴做参考)
 * 同步升级 3.3

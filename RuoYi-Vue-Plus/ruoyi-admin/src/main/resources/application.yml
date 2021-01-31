@@ -8,8 +8,8 @@ ruoyi:
   copyrightYear: 2021
   # 实例演示开关
   demoEnabled: true
-  # 文件路径,使用jvm系统变量,兼容windows和linux;
-  profile: ${user.dir}/ruoyi/uploadPath
+  # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/uploadimg/imgs）
+  profile: D:/ruoyi/uploadPath
   # 获取ip地址开关
   addressEnabled: false
   # 验证码类型 math 数组计算 char 字符验证
@@ -56,7 +56,7 @@ spring:
   messages:
     # 国际化资源文件路径
     basename: i18n/messages
-  profiles: 
+  profiles:
     active: @profiles.active@
   # 文件上传
   servlet:
@@ -78,7 +78,7 @@ token:
     # 令牌密钥
     secret: abcdefghijklmnopqrstuvwxyz
     # 令牌有效期（默认30分钟）
-    expireTime: 30
+    expireTime: 300
   
 # MyBatis配置
 # https://baomidou.com/config/
@@ -190,3 +190,13 @@ xss:
   excludes: /system/notice/*
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+
+feign:
+  # 开启压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  okhttp:
+    enabled: true

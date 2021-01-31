@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="log.path" value="./logs"/>
+    <!-- 日志存放路径 服务器 D://ruoyi//logs  本地 /home/myblog/logs  -->
+    <property name="log.path" value="D://ruoyi//logs"/>
     <property name="console.log.pattern"
               value="%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{36}%n) - %msg%n"/>
     <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
@@ -8,7 +9,7 @@
 	<!-- 控制台输出 -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>${console.log.pattern}</pattern>
+			<pattern>${log.pattern}</pattern>
             <charset>utf-8</charset>
 		</encoder>
 	</appender>

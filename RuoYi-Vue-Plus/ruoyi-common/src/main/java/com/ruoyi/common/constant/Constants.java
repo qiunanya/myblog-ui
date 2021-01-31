@@ -8,6 +8,16 @@ package com.ruoyi.common.constant;
 public class Constants
 {
     /**
+     * 通用状态 1
+     */
+    public static final String ONE = "1";
+
+    /**
+     * 通用状态 0
+     */
+    public static final String ZERO = "0";
+
+    /**
      * UTF-8 字符集
      */
     public static final String UTF8 = "UTF-8";

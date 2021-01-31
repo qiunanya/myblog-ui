@@ -79,6 +79,12 @@
             <artifactId>ruoyi-demo</artifactId>
         </dependency>
 
+        <!--  博客模块  -->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>nanya.blog</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
