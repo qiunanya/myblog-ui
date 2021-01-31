@@ -242,7 +242,7 @@
             <!-- demo模块 -->
             <dependency>
                 <groupId>com.ruoyi</groupId>
-                <artifactId>nanya.blog</artifactId>
+                <artifactId>candy-blog</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
@@ -257,7 +257,7 @@
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
         <module>ruoyi-demo</module>
-        <module>nanya.blog</module>
+        <module>candy-blog</module>
     </modules>
     <packaging>pom</packaging>
 

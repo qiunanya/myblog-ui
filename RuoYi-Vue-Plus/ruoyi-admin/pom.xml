@@ -82,7 +82,7 @@
         <!--  博客模块  -->
         <dependency>
             <groupId>com.ruoyi</groupId>
-            <artifactId>nanya.blog</artifactId>
+            <artifactId>candy-blog</artifactId>
         </dependency>
 
     </dependencies>

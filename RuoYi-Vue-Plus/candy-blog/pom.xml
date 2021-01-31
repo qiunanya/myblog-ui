@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nanya.blog</artifactId>
+    <artifactId>candy-blog</artifactId>
 
     <description>
         blog 博客模块
