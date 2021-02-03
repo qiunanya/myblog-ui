@@ -25,7 +25,8 @@
 		
 		<view class="u-m-t-20">
 			<u-cell-group>
-				<u-cell-item icon="rmb-circle" title="支付"></u-cell-item>
+				<!-- <u-cell-item icon="rmb-circle" title="支付"></u-cell-item> -->
+				<u-cell-item icon="order" class="artile" title="我的文章"></u-cell-item>
 			</u-cell-group>
 		</view>
 		
