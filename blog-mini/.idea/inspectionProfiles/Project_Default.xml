@@ -1,0 +1,169 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CheckImageSize" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssBrowserCompatibilityForProperties" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="CssConvertColorToHexInspection" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="CssConvertColorToRgbInspection" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="CssFloatPxLength" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidAtRule" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidCharsetRule" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidElement" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidFunction" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidHtmlTagReference" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidImport" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidMediaFeature" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidPropertyValue" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssInvalidPseudoSelector" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssMissingComma" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssMissingSemicolon" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="CssNegativeValue" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssNoGenericFontName" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssOverwrittenProperties" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssRedundantUnit" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssReplaceWithShorthandSafely" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssReplaceWithShorthandUnsafely" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssUnitlessNumber" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="false" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="CssUnknownTarget" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssUnresolvedClass" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssUnresolvedCustomProperty" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="CssUnusedSymbol" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlMissingClosingTag" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="HtmlPresentationalElement" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredAltAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredSummaryAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredTitleAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredTitleElement" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownAnchorTarget" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="scoped" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownBooleanAttribute" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="style" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="Json5StandardCompliance" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JsonDuplicatePropertyKeys" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JsonSchemaCompliance" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JsonSchemaDeprecation" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JsonSchemaRefReference" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="JsonStandardCompliance" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="LessResolvedByNameOnly" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="LessUnresolvedMixin" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="LessUnresolvedVariable" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MsBuiltinInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MsOrderByInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MysqlLoadDataPathInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="MysqlParsingInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="OraDeprecateTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="PgSelectFromProcedureInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W292" />
+          <option value="E301" />
+          <option value="E302" />
+          <option value="E111" />
+          <option value="W391" />
+          <option value="E305" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="RequiredAttributes" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
+    <inspection_tool class="SassScssResolvedByNameOnly" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedMixin" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedPlaceholderSelector" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedVariable" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlAddNotNullColumnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlAggregatesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlAmbiguousColumnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlAutoIncrementDuplicateInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlCaseVsCoalesceInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlCaseVsIfInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlCheckUsingColumnsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlConstantConditionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlCurrentSchemaInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlDerivedTableAliasInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlDialectInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlDropIndexedColumnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlDtInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlDuplicateColumnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlErrorHandlingInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlGotoInspection" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="SqlIdentifierInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlIdentifierLengthInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlIllegalCursorStateInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertIntoGeneratedColumnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertNullIntoNotNullInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertValuesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlJoinWithoutOnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlMisleadingReferenceInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlMissingColumnAliasesInspection" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="SqlMissingReturnInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlMultipleLimitClausesInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlNamedArgumentsInspection" enabled="false" level="TYPO" enabled_by_default="false" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlNullComparisonInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantAliasInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantCodeInCoalesceInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantElseNullInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantLimitInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantOrderingDirectionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlResolveInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlShouldBeInGroupByInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlSideEffectsInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlSignatureInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlStorageInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlStringLengthExceededInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlTransactionStatementInTriggerInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlTriggerTransitionInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlTypeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlUnicodeStringLiteralInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlUnreachableCodeInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedCteInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedSubqueryItemInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedVariableInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="SqlWithoutWhereInspection" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="Stylelint" enabled="true" level="TYPO" enabled_by_default="true" />
+  </profile>
+</component>

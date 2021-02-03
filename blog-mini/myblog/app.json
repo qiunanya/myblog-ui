@@ -1,0 +1,58 @@
+{
+        "pages": [
+            "pages/home/home",
+            "pages/about/about",
+            "pages/service/service",
+            "pages/category/category",
+            "pages/mine/mine",
+            "pages/detail/detail",
+            "pages/release/release"
+        ],
+        "window": {
+            "backgroundTextStyle": "light",
+            "navigationBarBackgroundColor": "#60D5C5",
+            "navigationBarTitleText": "幸运的糖果",
+            "navigationBarTextStyle": "white",
+            "backgroundColor": "#16697a",
+            "enablePullDownRefresh": true
+        },
+        "usingComponents": {
+            "my-component": "./components/my-component/my-component"
+        },
+        "tabBar": { 
+            "selectedColor": "#16697a",
+            "list": [
+                {
+                    "pagePath": "pages/home/home",
+                    "text": "首页",
+                    "iconPath": "assets/tabbar/home.png",
+                    "selectedIconPath": "assets/tabbar/home_active.png"
+                },
+                {
+                    "pagePath": "pages/category/category",
+                    "text": "分类",
+                    "iconPath": "assets/tabbar/category.png",
+                    "selectedIconPath": "assets/tabbar/category_active.png"
+                },
+                {
+                    "pagePath": "pages/release/release",
+                    "text": "发布",
+                    "iconPath": "assets/tabbar/release.png",
+                    "selectedIconPath": "assets/tabbar/release_active.png"
+                },
+                {
+                    "pagePath": "pages/about/about",
+                    "text": "关于",
+                    "iconPath": "assets/tabbar/about.png",
+                    "selectedIconPath": "assets/tabbar/about_active.png"
+                },
+                {
+                    "pagePath": "pages/mine/mine",
+                    "text": "我的",
+                    "iconPath": "assets/tabbar/my.png",
+                    "selectedIconPath": "assets/tabbar/my_active.png"
+                }
+            ]
+        },
+        "sitemapLocation": "sitemap.json"
+}

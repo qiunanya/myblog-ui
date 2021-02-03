@@ -1,0 +1,19 @@
+<!-- pages/about/about.wxml -->
+<i-panel title="幸运的糖果">
+    <view style="padding: 8px;">
+        本着助人为快乐之本的初衷，《幸运的糖果》小程序博客油然而生，
+    总结了博主对小程序技术的知识集萃，是对小程序知识的应用和实战，
+    感兴趣的小伙伴可以加QQ：1766226354，联系博主，获取相关详细文档和资料。
+    </view>
+</i-panel>
+<i-panel title="技术栈">
+    <view style="padding: 8px;">
+        HTML、CSS3、JAVASCRIPT、ES6、小程序原生API、IviewApp ui 框架，icon font字体图标
+    </view>
+</i-panel>
+<i-panel title="资料网址">
+    <view style="padding: 8px;">Gihub源码：https://github.com/qiunanya/mini-myblog</view>
+    <view style="padding: 8px;">Iviewui地址： https://weapp.iviewui.com</view>
+    <view style="padding: 8px;">Iconfont地址：https://www.iconfont.cn/</view>
+    <view style="padding: 8px;">颜色面板：https://colorhunt.co</view>
+</i-panel>

@@ -1,0 +1,8 @@
+/**app.wxss**/
+/*全局引入iconfont 字体图标*/
+@import "/assets/css/iconfont.wxss";
+
+/*首页公共样式*/
+.item-top-bottom-20 {
+    margin: 20rpx 0rpx;
+}

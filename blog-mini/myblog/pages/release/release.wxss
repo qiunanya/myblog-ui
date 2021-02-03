@@ -1,0 +1,22 @@
+.photos .img-list {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.img-list image {
+    width: 122rpx;
+    height: 120rpx;
+    border-radius: 12rpx;
+    padding: 20rpx 16rpx;
+}
+
+.photos .img-camera {
+    padding: 60rpx 0;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.img-camera .iconcamera {
+    font-size: 100rpx;
+}

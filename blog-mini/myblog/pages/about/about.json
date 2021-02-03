@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-panel": "../../dist/panel/index"
+  },
+  "navigationBarTitleText": "关于",
+  "navigationBarBackgroundColor": "#60D5C5"
+}

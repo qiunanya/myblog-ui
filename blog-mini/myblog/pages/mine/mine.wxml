@@ -1,0 +1,26 @@
+<!-- pages/mine/mine.wxml -->
+<view class="mine-contianer">
+    <view class="user">
+        <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}"></image>
+        <image wx:else src="/assets/home/demo.png"></image>
+        <view wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
+        <view wx:else>蓦然</view>
+    </view>
+</view>
+<i-cell-group>
+    <i-cell title="我的收藏" is-link>
+        <i-icon slot="icon" type="collection" size="28" color="#b1c33c" />
+    </i-cell>
+    <i-cell title="我的博文" is-link url="/pages/dashboard/index">
+        <i-icon slot="icon" type="document" size="28" color="#b1c33c" />
+    </i-cell>
+    <i-cell title="我的粉丝" is-link url="/pages/dashboard/index">
+        <i-icon slot="icon" type="group" size="28" color="#3c72c3" />
+    </i-cell>
+    <i-cell title="我的点赞记录" is-link url="/pages/dashboard/index" only-tap-footer>
+        <i-icon slot="icon" type="like" size="28" color="#f56990" />
+    </i-cell>
+    <i-cell title="开启授权">
+        <switch slot="footer" checked />
+    </i-cell>
+</i-cell-group>

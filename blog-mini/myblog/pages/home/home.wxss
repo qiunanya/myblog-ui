@@ -1,0 +1,112 @@
+/* pages/home/home.wxss */
+/* 轮播图样式 */
+
+.home-contianer {
+    background-color: #F6F4E7;
+}
+
+.carousel .swiper-item {
+    height: 100%;
+}
+
+.img-item {
+    width: 100%;
+    height: inherit;
+}
+
+.content .list-item {
+    margin: 26rpx 20rpx;
+    background-color: #ffffff;
+    border-radius: 12rpx;
+}
+
+.list-item .person {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+}
+
+.person .name {
+    font-size: 36rpx;
+    font-weight: bold;
+    padding-left: 12rpx;
+}
+
+.person .time {
+    font-size: 0.8em;
+    color: #999999;
+    padding-left: 12rpx;
+}
+
+.list-item .person image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+
+.list-item image {
+    width: 100%;
+    border-radius: 12rpx;
+}
+
+.item-title,
+.item-action,
+.person {
+    margin-left: 30rpx;
+}
+
+.list-item .item-tag {
+    font-size: 32rpx;
+    border-bottom: 2rpx solid #dedbdb;
+    padding: 0 0 20rpx 30rpx;
+}
+
+.item-tag text {
+    margin-right: 25rpx;
+}
+
+.list-item .item-action {
+    display: flex;
+    font-size: 32rpx;
+    padding: 20rpx 0;
+}
+
+.item-action .ac-item {
+    flex: 1;
+    padding-right: 12rpx;
+}
+
+.ac-item .iconfont {
+    font-size: 32rpx;
+}
+
+.container_wrap {
+    text-align: center;
+    padding: 20rpx 30rpx;
+}
+
+.title {
+    display: block;
+}
+
+/* 自定义模板样式，模板里定义不生效，在这里测试生效 */
+.template_bd {
+    background-color: #c6fced;
+}
+
+.red {
+    color: red;
+}
+
+.image_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img {
+    margin: 12rpx 12rpx;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 12rpx;
+}

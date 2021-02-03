@@ -1,0 +1,23 @@
+<!-- pages/release/release.wxml -->
+<view class="release-container">
+    <view class="form">
+        <i-panel title="基础用法">
+            <i-input value="{{ formData.title }}" bind:blur="updateValue" title="标题" placeholder="请输入标题" maxlength="100" />
+            <i-input class="textarea" bind:blur="updateArea" value="{{ formData.content }}" type="textarea" title="文章内容" placeholder="请输入内容" />
+            <i-input class="textarea" value="{{ formData.content }}" title="添加位置" placeholder="请选择位置" />
+            <view class="photos">
+                <view class="img-list">
+                    <block wx:for="{{ formData.photos }}" wx:key="index">
+                        <image class="img" src="{{ item }}" data-index="{{index}}" bind:tap="handlePriviewImg"></image>
+                    </block>
+                </view>
+                <view class="img-camera">
+                    <text class="iconfont iconcamera" bind:tap="handleShowActionSheet"></text>
+                </view>
+            </view>
+        </i-panel>
+    </view>
+    <view class="release">
+        <i-button class="release-btn" bind:click="handleSubmit" type="primary">发布</i-button>
+    </view>
+</view>

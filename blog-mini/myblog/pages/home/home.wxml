@@ -1,0 +1,131 @@
+<!-- pages/home/home.wxml -->
+<!-- 导入自定义模板 -->
+<import src="../../template/template.wxml" />
+<!-- 自定义wxs函数，wxs可以在页面直接调用 -->
+<wxs src="../../wxs/info.wxs" module="info"></wxs>
+<!-- 轮播图 -->
+<view class="home-contianer">
+    <view class="carousel">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{background}}" wx:key="index">
+                <swiper-item>
+                    <view class="swiper-item">
+                        <image class="img-item" src="{{item}}"></image>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="content">
+        <view class="list-item">
+            <view class="person">
+                <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}"></image>
+                <image wx:else src="/assets/home/demo.png"></image>
+                <text wx:if="{{userInfo.nickName}}" class="name">{{userInfo.nickName}}</text>
+                <text wx:else class="name">蓦然</text>
+                <text class="time">2020-12-27 23:30:59</text>
+            </view>
+            <image class="" src="/assets/home/demo.png"></image>
+            <view class="item-title item-top-bottom-20">人生有一种遗忘，历历如绘</view>
+            <view class="item-tag">
+                <text class="iconfont icontag"></text>
+                <text>人像</text>
+                <text>清新</text>
+                <text>色彩</text>
+                <text>旅行</text>
+            </view>
+            <view class="item-action">
+                <view class="ac-item">28热度</view>
+                <view class="ac-item">
+                    <text class="iconfont icondianzan"></text>
+                    <text>点赞</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshoucang"></text>
+                    <text>收藏</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconhuifu"></text>
+                    <text>回应</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshare_icon"></text>
+                    <text>分享</text>
+                </view>
+            </view>
+        </view>
+        <view class="list-item">
+            <view class="person">
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <text class="name">{{userInfo.nickName}}</text>
+                <text class="time">2020-12-27 23:30:59</text>
+            </view>
+            <image class="" src="/assets/home/demo.png"></image>
+            <view class="item-title item-top-bottom-20">人生有一种遗忘，历历如绘</view>
+            <view class="item-tag">
+                <text class="iconfont icontag"></text>
+                <text>人像</text>
+                <text>清新</text>
+                <text>色彩</text>
+                <text>旅行</text>
+            </view>
+            <view class="item-action">
+                <view class="ac-item">28热度</view>
+                <view class="ac-item">
+                    <text class="iconfont icondianzan"></text>
+                    <text>点赞</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshoucang"></text>
+                    <text>收藏</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconhuifu"></text>
+                    <text>回应</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshare_icon"></text>
+                    <text>分享</text>
+                </view>
+            </view>
+        </view>
+        <view class="list-item">
+            <view class="person">
+                <image src="{{userInfo.avatarUrl}}"></image>
+                <text class="name">{{userInfo.nickName}}</text>
+                <text class="time">2020-12-27 23:30:59</text>
+            </view>
+            <image class="" src="/assets/home/demo.png"></image>
+            <view class="item-title item-top-bottom-20">人生有一种遗忘，历历如绘</view>
+            <view class="item-tag">
+                <text class="iconfont icontag"></text>
+                <text>人像</text>
+                <text>清新</text>
+                <text>色彩</text>
+                <text>旅行</text>
+            </view>
+            <view class="item-action">
+                <view class="ac-item">28热度</view>
+                <view class="ac-item">
+                    <text class="iconfont icondianzan"></text>
+                    <text>点赞</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshoucang"></text>
+                    <text>收藏</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconhuifu"></text>
+                    <text>回应</text>
+                </view>
+                <view class="ac-item">
+                    <text class="iconfont iconshare_icon"></text>
+                    <text>分享</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfos" style="margin:50rpx auto;">
+    获取用户权限信息
+</button>
