@@ -168,7 +168,7 @@
           </template>
       </el-table-column>
       <el-table-column
-        label="发布日期"
+        label="发布日期" 
         align="center"
         prop="articleReleaseTime"
         width="180"
