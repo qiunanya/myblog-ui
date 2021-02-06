@@ -29,7 +29,10 @@
 			}
 		},
 		onLoad() {
-
+			this.$store.commit('SET_USERNAME','王忠美')
+			console.log('store',this.$store.getters.GET_USERNAME)
+			console.log('api',this.$api)
+			console.log('ajax',this.$ajax)
 		},
 		methods: {
 			showToast() {
