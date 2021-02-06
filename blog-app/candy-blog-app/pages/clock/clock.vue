@@ -87,38 +87,45 @@
 						this_.form.locationZh = res.address
 				    }
 				});
+			},
+			// 获取当前位置
+			getCurrentLocation(){
+				let this_ = this
+				// uni.showLoading({
+				//     title: '正在努力获取当前位置...'
+				// })
+				// 获取当前位置
+				uni.getLocation({
+				    type: 'gcj02',
+					geocode: true,
+				    success: function (res) {
+						this_.longitude = res.longitude
+						this_.latitude = res.latitude
+						let obj = {
+							latitude: res.latitude,
+							longitude: res.longitude,
+							iconPath: '../../static/map/location.png',
+							alpha: 0.5,
+							title: `${res.address.city}${res.address.district}${res.address.street}${res.address.streetNum}号${res.address.poiName}(${res.address.cityCode})`
+						}
+						this_.covers[0] = obj
+						this_.form.locationZh = `${res.address.country}${res.address.province}${res.address.city}${res.address.district}${res.address.street}${res.address.streetNum}号${res.address.poiName}-城市编号(${res.address.cityCode})`
+				        // console.log('当前位置的经度：' + res.longitude, this_.longitude);
+				        // console.log('当前位置的纬度：' + res.latitude,this_.latitude);
+						uni.stopPullDownRefresh()
+				    }
+				});
 			}
 		},
 		// 监听右上角按钮
 		onNavigationBarButtonTap(e){
 			this.changeAddress()
 		},
+		onPullDownRefresh() {
+			this.getCurrentLocation()
+		},
 		onShow() {
-			let this_ = this
-			uni.showLoading({
-			    title: '正在努力获取当前位置...'
-			})
-			// 获取当前位置
-			uni.getLocation({
-			    type: 'gcj02',
-				geocode: true,
-			    success: function (res) {
-					this_.longitude = res.longitude
-					this_.latitude = res.latitude
-					let obj = {
-						latitude: res.latitude,
-						longitude: res.longitude,
-						iconPath: '../../static/map/location.png',
-						alpha: 0.5,
-						title: `${res.address.city}${res.address.district}${res.address.street}${res.address.streetNum}号${res.address.poiName}(${res.address.cityCode})`
-					}
-					this_.covers[0] = obj
-					this_.form.locationZh = `${res.address.country}${res.address.province}${res.address.city}${res.address.district}${res.address.street}${res.address.streetNum}号${res.address.poiName}-城市编号(${res.address.cityCode})`
-			        // console.log('当前位置的经度：' + res.longitude, this_.longitude);
-			        // console.log('当前位置的纬度：' + res.latitude,this_.latitude);
-					uni.hideLoading();
-			    }
-			});
+			this.getCurrentLocation()
 		}
 	}
 </script>

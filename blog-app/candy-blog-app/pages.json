@@ -27,6 +27,7 @@
 				"navigationBarShadow":{
 					"colorType": "green"
 				},
+				"enablePullDownRefresh": true,
 				"app-plus":{
 					 "bounce": "none",
 					 "titleNView": {
