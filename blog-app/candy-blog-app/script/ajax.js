@@ -30,17 +30,17 @@ function request(method, url, data) {
 		})
 	})
 }
-function post(method,url,data) {
-  return request(method,url,data)
+function post(url,data) {
+  return request('post',url,data)
 }
-function get(method,url,data) {
-  return request(method,url,data)
+function get(url,data) {
+  return request('get',url,data)
 }
-function del(method,url,data) {
-  return request(method,url,data)
+function del(url,data) {
+  return request('delete',url,data)
 }
-function put(method,url,data) {
-  return request(method,url,data)
+function put(url,data) {
+  return request('put',url,data)
 }
 
 export default {
