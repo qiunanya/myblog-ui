@@ -12,9 +12,10 @@
 				<u-form-item label="当前位置:">
 					<u-input v-model="form.locationZh" type="textarea" border height="100" auto-height :clearable="false"/>
 				</u-form-item>
-				<u-button type="success" @tap="changeAddress">重新选择地址</u-button>
+				<!-- <u-button type="success" @tap="changeAddress">重新选择地址</u-button> -->
 			</u-form>
 		</view>
+		<text class="iconfont iconcamera"></text>
     </view>
 </template>
 
@@ -87,6 +88,10 @@
 				    }
 				});
 			}
+		},
+		// 监听右上角按钮
+		onNavigationBarButtonTap(e){
+			this.changeAddress()
 		},
 		onShow() {
 			let this_ = this

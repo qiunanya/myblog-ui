@@ -6,6 +6,27 @@
   "description": "我的demo小程序图标",
   "glyphs": [
     {
+      "icon_id": "435979",
+      "name": "位置",
+      "font_class": "weizhi",
+      "unicode": "e7e6",
+      "unicode_decimal": 59366
+    },
+    {
+      "icon_id": "16744694",
+      "name": "当前位置",
+      "font_class": "dangqianweizhi",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "3040366",
+      "name": "首页",
+      "font_class": "shouye1",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
       "icon_id": "537802",
       "name": "camera",
       "font_class": "camera",

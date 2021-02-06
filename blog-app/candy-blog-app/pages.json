@@ -26,6 +26,20 @@
 				"navigationBarTextStyle":"white",
 				"navigationBarShadow":{
 					"colorType": "green"
+				},
+				"app-plus":{
+					 "bounce": "none",
+					 "titleNView": {
+						 "buttons": [ 
+							 {
+								 "text": "\ue7e6", 
+								 "fontSrc":"/static/icon/iconfont.ttf",
+								 "fontSize":"16",
+								 "float": "right",  
+								 "color":"#FFFFFF"
+							 }
+						 ]
+					}
 				}
 			}
 		},
