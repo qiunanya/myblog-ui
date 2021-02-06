@@ -1,4 +1,10 @@
-// 注释将会特别详细，只有您有合理地耐心看完将不会出现问题
+/**
+ * @description 全局统一封装请求方式
+ * @param {*} options 封装请求数据信息，包括参数，请求url，请求方式 
+ */
+
+// 默认请求超时时间s
+let timeout = 15000
 function request(method, url, data) {
 	return new Promise((resolve, rejected) => {
 		uni.showLoading({
@@ -8,6 +14,7 @@ function request(method, url, data) {
 			method: method,
 			url: url,
 			data: data,
+			timeout: timeout,
 			header: {
 				'Accept': "*/*",
 				'content-type': 'application/json;charset=utf-8',
