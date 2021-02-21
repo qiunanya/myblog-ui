@@ -35,7 +35,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 @RestController
 @RequestMapping("app/blog/article" )
-public class APPBlogArticleController extends BaseController {
+public class AppBlogArticleController extends BaseController {
     @Autowired
     IBlogArticleService iBlogArticleService;
 
