@@ -7,13 +7,11 @@ import lombok.experimental.Accessors;
 import com.ruoyi.common.annotation.Excel;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
-import java.math.BigDecimal;
 
 /**
  * 文章对象 blog_article
