@@ -80,10 +80,10 @@ public class AppBlogArticleController extends BaseController {
     }
 
     @ApiOperation("删除文章")
-    @ApiImplicitParam(name = "articleId", value = "文章ID", required = true, dataType = "Long", paramType = "path")
+    @ApiImplicitParam(name = "articleIds", value = "文章ID集合", required = true, paramType = "body")
     @Log(title = "删除文章" , businessType = BusinessType.DELETE)
-    @DeleteMapping("/{articleIds}" )
-    public AjaxResult remove(@PathVariable Long[] articleIds) {
+    @DeleteMapping
+    public AjaxResult remove(@RequestBody Long[] articleIds) {
         return iBlogArticleService.removeArticleByIds(articleIds);
     }
 
