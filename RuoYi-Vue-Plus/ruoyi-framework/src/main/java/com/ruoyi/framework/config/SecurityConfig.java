@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -109,6 +110,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .antMatchers("/common/download**").anonymous()
                 .antMatchers("/common/download/resource**").anonymous()
                 .antMatchers("/swagger-ui.html").anonymous()
+                .antMatchers("/doc.html").anonymous()
                 .antMatchers("/swagger-resources/**").anonymous()
                 .antMatchers("/webjars/**").anonymous()
                 .antMatchers("/*/api-docs").anonymous()
@@ -125,7 +127,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         httpSecurity.addFilterBefore(corsFilter, LogoutFilter.class);
     }
 
-    
+    /**
+     * @Author Qiunanya
+     * @Description 集中配置不需要认证的接口
+     * @params
+     * @Date 2021/2/21 14:20
+     * @reture
+     **/
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/app/blog/article/*");
+//                .antMatchers("/blog/article/test");
+        //super.configure(web);
+    }
+
     /**
      * 强散列哈希加密实现
      */

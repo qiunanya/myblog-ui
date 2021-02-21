@@ -1,10 +1,12 @@
-package com.ruoyi.web.controller.blog;
+package com.ruoyi.web.controller.app;
 
 import java.util.List;
 import java.util.Arrays;
 
 import com.ruoyi.blog.domain.BlogArticle;
 import com.ruoyi.blog.service.IBlogArticleService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.common.core.page.TableDataInfo;
 
 /**
+ * APP 访问接口
  * 文章Controller
  * 
  * @author ruoyi
@@ -31,15 +34,12 @@ import com.ruoyi.common.core.page.TableDataInfo;
  */
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 @RestController
-@RequestMapping("/blog/article" )
-public class BlogArticleController extends BaseController {
+@RequestMapping("app/blog/article" )
+public class APPBlogArticleController extends BaseController {
     @Autowired
     IBlogArticleService iBlogArticleService;
 
-    /**
-     * 查询文章列表
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:list')")
+    @ApiOperation("查询文章列表")
     @GetMapping("/list")
     public TableDataInfo list(BlogArticle blogArticle) {
         startPage();
@@ -47,10 +47,7 @@ public class BlogArticleController extends BaseController {
         return getDataTable(list);
     }
 
-    /**
-     * 导出文章列表
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:export')" )
+    @ApiOperation("导出文章列表")
     @Log(title = "文章" , businessType = BusinessType.EXPORT)
     @GetMapping("/export" )
     public AjaxResult export(BlogArticle blogArticle) {
@@ -59,48 +56,38 @@ public class BlogArticleController extends BaseController {
         return util.exportExcel(list, "article" );
     }
 
-    /**
-     * 获取文章详细信息
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:query')" )
+    @ApiOperation("获取文章详细信息")
+    @ApiImplicitParam(name = "articleId", value = "文章ID", required = true, dataType = "Long", paramType = "path")
     @GetMapping(value = "/{articleId}" )
     public AjaxResult getInfo(@PathVariable("articleId" ) Long articleId) {
         return AjaxResult.success(iBlogArticleService.getById(articleId));
     }
 
-    /**
-     * 新增文章
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:add')" )
-    @Log(title = "文章" , businessType = BusinessType.INSERT)
+    @ApiOperation("新增文章")
+    @ApiImplicitParam(name = "blogArticle", value = "文章实体", required = true, dataType = "Object")
+    @Log(title = "新增文章" , businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody BlogArticle blogArticle) {
         return toAjax(iBlogArticleService.save(blogArticle) ? 1 : 0);
     }
 
-    /**
-     * 修改文章
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:edit')" )
-    @Log(title = "文章" , businessType = BusinessType.UPDATE)
+    @ApiOperation("修改文章")
+    @ApiImplicitParam(name = "blogArticle", value = "文章实体", required = true, dataType = "Object")
+    @Log(title = "修改文章" , businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody BlogArticle blogArticle) {
         return toAjax(iBlogArticleService.updateById(blogArticle) ? 1 : 0);
     }
 
-    /**
-     * 删除文章
-     */
-    @PreAuthorize("@ss.hasPermi('blog:article:remove')" )
-    @Log(title = "文章" , businessType = BusinessType.DELETE)
+    @ApiOperation("删除文章")
+    @ApiImplicitParam(name = "articleId", value = "文章ID", required = true, dataType = "Long", paramType = "path")
+    @Log(title = "删除文章" , businessType = BusinessType.DELETE)
     @DeleteMapping("/{articleIds}" )
     public AjaxResult remove(@PathVariable Long[] articleIds) {
         return iBlogArticleService.removeArticleByIds(articleIds);
     }
 
-    /**
-     * 测试接口
-     */
+    @ApiOperation("测试接口")
     @GetMapping(value = "/test")
     public AjaxResult test() {
         return AjaxResult.success("测试接口访问成功啦，，，");
